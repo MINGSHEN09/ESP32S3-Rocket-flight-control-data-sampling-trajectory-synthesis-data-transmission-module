@@ -5,7 +5,6 @@ This project based on ESP32S3,ICM-20602,NEO-M8N,BMP388 and SIM7600CET
 基于 ESP32-S3 的火箭飞行数据采集与回传项目  
 采集 **位置、轨迹、海拔、姿态**，通过 **4G 实时回传** + **TF卡黑匣子存储**
 
-![PlatformIO](https://img.shields.io/badge/PlatformIO-%23F5820D.svg?style=flat&logo=platformio&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## 项目目标
