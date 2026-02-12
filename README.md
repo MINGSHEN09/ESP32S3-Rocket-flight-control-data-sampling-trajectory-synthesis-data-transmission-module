@@ -1,0 +1,2 @@
+# -ESP32S3-
+This project based on ESP32S3,ICM-20602,NEO-M8N,BMP388 and SIM7600CET
