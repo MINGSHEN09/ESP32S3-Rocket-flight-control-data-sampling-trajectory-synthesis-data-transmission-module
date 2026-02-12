@@ -28,25 +28,29 @@ This project based on ESP32S3,ICM-20602,NEO-M8N,BMP388 and SIM7600CET
 
 **重要提醒**：SIM7600 峰值电流可达 2A 以上，建议单独 5V 供电 + 大电容，否则容易重启或死机。
 
-📌 硬件连线 (Wiring Map)
-1. I2C 传感器 (共享总线)
-| 传感器 (VCC=3.3V) | ESP32-S3 |
-|---|---|
-| SCL | GPIO 22 |
-| SDA | GPIO 21 |
-2. SPI SD 卡
-| SD 模块 | ESP32-S3 |
-|---|---|
-| CS | GPIO 5 |
-| MOSI | GPIO 11 |
-| MISO | GPIO 13 |
-| SCK | GPIO 12 |
-3. UART 串口设备
-| 设备 | 信号 | ESP32-S3 |
-|---|---|---|
-| NEO-M8N | TX / RX | GPIO 18 / 19 |
-| SIM7600 | TX / RX | GPIO 17 / 16 |
-| SIM7600 | PWRKEY | GPIO 4 |
+📌### 📌 硬件连线 (Wiring Map)
+
+#### 1. I2C 传感器 (共享总线)
+| 传感器信号 (VCC=3.3V) | ESP32-S3 引脚 |
+| :--- | :--- |
+| **SCL** | GPIO 22 |
+| **SDA** | GPIO 21 |
+
+#### 2. SPI SD 卡模块
+| SD 模块引脚 | ESP32-S3 引脚 |
+| :--- | :--- |
+| **CS** | GPIO 5 |
+| **MOSI** | GPIO 11 |
+| **MISO** | GPIO 13 |
+| **SCK** | GPIO 12 |
+
+#### 3. UART 串口设备
+| 设备 | 信号 | ESP32-S3 引脚 |
+| :--- | :--- | :--- |
+| **NEO-M8N** | TX / RX | GPIO 18 / 19 |
+| **SIM7600** | TX / RX | GPIO 17 / 16 |
+| **SIM7600** | PWRKEY | GPIO 4 |
+
 📦 库依赖项
 需在Arduino IDE 中安装以下库：
  * Adafruit_BMP3XX
