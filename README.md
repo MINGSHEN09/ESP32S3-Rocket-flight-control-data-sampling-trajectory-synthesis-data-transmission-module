@@ -27,3 +27,44 @@ This project based on ESP32S3,ICM-20602,NEO-M8N,BMP388 and SIM7600CET
 | 电源          | 3.7–5V LiPo   | 供电（SIM7600 需大电流）       | —        | 加 ≥1000μF 电容稳压         |
 
 **重要提醒**：SIM7600 峰值电流可达 2A 以上，建议单独 5V 供电 + 大电容，否则容易重启或死机。
+
+📌 硬件连线 (Wiring Map)
+1. I2C 传感器 (共享总线)
+| 传感器 (VCC=3.3V) | ESP32-S3 |
+|---|---|
+| SCL | GPIO 22 |
+| SDA | GPIO 21 |
+2. SPI SD 卡
+| SD 模块 | ESP32-S3 |
+|---|---|
+| CS | GPIO 5 |
+| MOSI | GPIO 11 |
+| MISO | GPIO 13 |
+| SCK | GPIO 12 |
+3. UART 串口设备
+| 设备 | 信号 | ESP32-S3 |
+|---|---|---|
+| NEO-M8N | TX / RX | GPIO 18 / 19 |
+| SIM7600 | TX / RX | GPIO 17 / 16 |
+| SIM7600 | PWRKEY | GPIO 4 |
+📦 库依赖项
+需在Arduino IDE 中安装以下库：
+ * Adafruit_BMP3XX
+ * TinyGPSPlus
+ * TinyGSM
+ * ArduinoHttpClient
+ * ICM20602 (或对应的驱动代码)
+☁️ 服务器端部署
+项目包含一个简单的 Python Flask 接收端，部署在阿里云服务器上：
+ * 安装环境：
+   pip3 install flask
+ * 启动服务：
+   运行 server.py，确保服务器安全组已开放 5000 端口。
+ * 数据格式：
+   服务器将接收如下格式的 JSON：
+   {"ph": 1, "lat": 39.9, "lon": 116.3, "alt": 120.5, "v": 15.2}
+
+⚠️ 安全警告与免责声明
+ * 法律合规：请在进行任何火箭发射活动前，确保符合当地航空管理部门的法律法规。
+ * 电源安全：SIM7600 模块在发射信号时会有大电流波动，请务必使用独立电源或加装大电容。
+ * 免责声明：本项目仅供科研和学习参考，因使用本代码导致的任何硬件损坏或意外事故，作者概不负责。
