@@ -28,11 +28,3 @@ This project based on ESP32S3,ICM-20602,NEO-M8N,BMP388 and SIM7600CET
 | 电源          | 3.7–5V LiPo   | 供电（SIM7600 需大电流）       | —        | 加 ≥1000μF 电容稳压         |
 
 **重要提醒**：SIM7600 峰值电流可达 2A 以上，建议单独 5V 供电 + 大电容，否则容易重启或死机。
-
-## 快速开始
-
-### 1. 克隆仓库
-
-```bash
-git clone https://github.com/你的用户名/你的仓库名.git
-cd 你的仓库名
